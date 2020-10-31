@@ -1,11 +1,20 @@
 body {
 	box-sizing: border-box;
 	background-color: #f2f2f2;
+	font-family: 'Libre Baskerville', serif;
 }
 .container {
 	max-width: 1100px;
 	margin: 0 auto;
 }
+
+h1 {
+	color: #008fd1;
+	text-transform: uppercase;
+	font-size: 3rem;
+	max-width: 40rem;
+}
+
 h2 {
 	flex: 0 1 100%;
 	text-align: center;
@@ -32,6 +41,9 @@ img {
 	background-size: cover;
 	height: 100vh;
 	background-attachment: fixed;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .navbar {
@@ -42,17 +54,38 @@ img {
 	width: 100%;
 }
 
+.header-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 @media (min-width: 768px) {
 	.header-container {
-		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 	}
 }
 
-.header-container {
+.main-navigation {
 	display: flex;
 	flex-direction: column;
+	margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+	.main-navigation {
+		flex: 0 0 25rem;
+		justify-content: space-between;
+		flex-direction: row;
+		margin-top: 0;
+	}
+}
+
+.main-navigation a {
+	color: white;
+	font-size: 1.4rem;
+	text-decoration: none;
 }
 
 .content {
@@ -97,4 +130,71 @@ img {
 	.entry {
 		flex: 0 1 calc(33% - 1rem);
 	}
+}
+
+.footer {
+	background-color: #008fd1;
+	padding-top: 1rem;
+	color: white;
+}
+
+.footer h2 {
+	text-transform: uppercase;
+}
+
+.footer p {
+	line-height: 2;
+}
+
+@media (min-width: 768px) {
+	.footer .container {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.footer .box {
+		flex: 0 0 calc(33.3% -1rem);
+	}
+}
+
+.social-nav {
+	display: flex;
+	justify-content: center;
+}
+
+@media (min-width: 768px) {
+	.social-nav {
+		justify-content: flex-end;
+	}
+}
+
+.social-nav span {
+	display: none;
+}
+
+.social-nav a {
+	margin-right: 1rem;
+	text-decoration: none;
+}
+
+.social-nav a::before {
+	font-family: "Font Awesome 5 Brands";
+	color: white;
+	font-size: 2rem;
+}
+
+.social-nav a[href*='facebook.com']::before {
+	content: "\f09a";
+}
+
+.social-nav a[href*='instagram.com']::before {
+	content: "\f16d";
+}
+
+.social-nav a[href*='twitter.com']::before {
+	content: "\f099";
+}
+
+.social-nav a[href*='youtube.com']::before {
+	content: "\f431";
 }
